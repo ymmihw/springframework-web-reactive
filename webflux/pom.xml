@@ -30,5 +30,6 @@
   <module>spring-webflux-url-matching</module>
   <module>spring-webflux-webclient</module>
   <module>spring-webflux-netty-config</module>
+  <module>spring-webflux-status-code</module>
  </modules>
 </project>
