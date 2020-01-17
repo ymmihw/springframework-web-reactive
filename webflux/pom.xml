@@ -31,5 +31,6 @@
   <module>spring-webflux-webclient</module>
   <module>spring-webflux-netty-config</module>
   <module>spring-webflux-status-code</module>
+  <module>spring-webflux-vs-mvc</module>
  </modules>
 </project>
