@@ -4,13 +4,13 @@
  <modelVersion>4.0.0</modelVersion>
  <parent>
   <groupId>com.ymmihw.springframework</groupId>
-  <artifactId>webflux</artifactId>
+  <artifactId>spring-webflux-vs-mvc</artifactId>
   <version>0.0.1-SNAPSHOT</version>
  </parent>
  <groupId>com.ymmihw.springframework</groupId>
- <artifactId>spring-webflux-netty-config</artifactId>
+ <artifactId>person-registration-slow-service</artifactId>
  <version>0.0.1-SNAPSHOT</version>
- <name>spring-webflux-netty-config</name>
+ <name>person-registration-slow-service</name>
  <url>http://maven.apache.org</url>
  <properties>
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,4 +21,12 @@
    <artifactId>spring-boot-starter-webflux</artifactId>
   </dependency>
  </dependencies>
+ <build>
+  <plugins>
+   <plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+   </plugin>
+  </plugins>
+ </build>
 </project>

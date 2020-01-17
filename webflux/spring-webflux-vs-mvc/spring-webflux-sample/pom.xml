@@ -4,13 +4,13 @@
  <modelVersion>4.0.0</modelVersion>
  <parent>
   <groupId>com.ymmihw.springframework</groupId>
-  <artifactId>webflux</artifactId>
+  <artifactId>spring-webflux-vs-mvc</artifactId>
   <version>0.0.1-SNAPSHOT</version>
  </parent>
  <groupId>com.ymmihw.springframework</groupId>
- <artifactId>spring-webflux-netty-config</artifactId>
+ <artifactId>spring-webflux-sample</artifactId>
  <version>0.0.1-SNAPSHOT</version>
- <name>spring-webflux-netty-config</name>
+ <name>spring-webflux-sample</name>
  <url>http://maven.apache.org</url>
  <properties>
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,5 +20,23 @@
    <groupId>org.springframework.boot</groupId>
    <artifactId>spring-boot-starter-webflux</artifactId>
   </dependency>
+  <dependency>
+   <groupId>com.github.tomakehurst</groupId>
+   <artifactId>wiremock-standalone</artifactId>
+   <scope>test</scope>
+  </dependency>
+  <dependency>
+   <groupId>io.projectreactor</groupId>
+   <artifactId>reactor-test</artifactId>
+   <scope>test</scope>
+  </dependency>
  </dependencies>
+ <build>
+  <plugins>
+   <plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+   </plugin>
+  </plugins>
+ </build>
 </project>

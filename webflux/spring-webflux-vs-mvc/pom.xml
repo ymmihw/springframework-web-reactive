@@ -4,14 +4,14 @@
  <modelVersion>4.0.0</modelVersion>
  <parent>
   <groupId>com.ymmihw.springframework</groupId>
-  <artifactId>springframework-web-reactive</artifactId>
+  <artifactId>webflux</artifactId>
   <version>0.0.1-SNAPSHOT</version>
  </parent>
  <groupId>com.ymmihw.springframework</groupId>
- <artifactId>webflux</artifactId>
+ <artifactId>spring-webflux-vs-mvc</artifactId>
  <version>0.0.1-SNAPSHOT</version>
  <packaging>pom</packaging>
- <name>webflux</name>
+ <name>spring-webflux-vs-mvc</name>
  <url>http://maven.apache.org</url>
  <properties>
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,18 +19,18 @@
  <dependencies>
  </dependencies>
  <modules>
-  <module>spring-webflux-cors</module>
-  <module>spring-webflux-errors</module>
-  <module>spring-webflux-filters</module>
-  <module>spring-webflux-functional-web</module>
-  <module>spring-webflux-intro</module>
-  <module>spring-webflux-kotlin</module>
-  <module>spring-webflux-security</module>
-  <module>spring-webflux-static-content</module>
-  <module>spring-webflux-url-matching</module>
-  <module>spring-webflux-webclient</module>
-  <module>spring-webflux-netty-config</module>
-  <module>spring-webflux-status-code</module>
-  <module>spring-webflux-vs-mvc</module>
+  <module>spring-mvc-sample</module>
+  <module>person-registration-slow-service</module>
+  <module>spring-webflux-sample</module>
+  <module>perf-test-with-gatling</module>
  </modules>
+ <dependencyManagement>
+  <dependencies>
+   <dependency>
+    <groupId>com.github.tomakehurst</groupId>
+    <artifactId>wiremock-standalone</artifactId>
+    <version>2.25.1</version>
+   </dependency>
+  </dependencies>
+ </dependencyManagement>
 </project>
