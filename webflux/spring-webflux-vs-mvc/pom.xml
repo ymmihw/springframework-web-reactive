@@ -22,6 +22,7 @@
   <module>spring-mvc-sample</module>
   <module>person-registration-slow-service</module>
   <module>spring-webflux-sample</module>
+  <module>perf-test-with-gatling</module>
  </modules>
  <dependencyManagement>
   <dependencies>
