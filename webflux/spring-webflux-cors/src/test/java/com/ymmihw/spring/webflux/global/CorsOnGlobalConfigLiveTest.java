@@ -69,7 +69,7 @@ public class CorsOnGlobalConfigLiveTest {
   public void whenPreflightFunctionalEndpoint_thenObtain404Response() {
     ResponseSpec response =
         client.options().uri(BASE_FUNCTIONALS_URL + "/cors-disabled-functional-endpoint")
-            .header("Access-Control-Request-Method", "PUT").exchange();
+            .header("Access-Control-Request-Method", "GET").exchange();
 
     response.expectStatus().isNotFound();
   }
