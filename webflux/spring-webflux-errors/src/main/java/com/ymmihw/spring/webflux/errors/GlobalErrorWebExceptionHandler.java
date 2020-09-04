@@ -3,6 +3,7 @@ package com.ymmihw.spring.webflux.errors;
 import java.util.Map;
 import org.springframework.boot.autoconfigure.web.ResourceProperties;
 import org.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler;
+import org.springframework.boot.web.error.ErrorAttributeOptions;
 import org.springframework.boot.web.reactive.error.ErrorAttributes;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.annotation.Order;
@@ -36,8 +37,8 @@ public class GlobalErrorWebExceptionHandler extends AbstractErrorWebExceptionHan
   }
 
   private Mono<ServerResponse> renderErrorResponse(final ServerRequest request) {
-
-    final Map<String, Object> errorPropertiesMap = getErrorAttributes(request, false);
+    final Map<String, Object> errorPropertiesMap =
+        getErrorAttributes(request, ErrorAttributeOptions.defaults());
 
     return ServerResponse.status(HttpStatus.BAD_REQUEST).contentType(MediaType.APPLICATION_JSON)
         .body(BodyInserters.fromValue(errorPropertiesMap));
