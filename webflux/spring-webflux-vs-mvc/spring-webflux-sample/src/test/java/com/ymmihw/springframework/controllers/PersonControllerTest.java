@@ -4,18 +4,15 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import java.util.UUID;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import com.ymmihw.springframework.models.Person;
 import com.ymmihw.springframework.services.PersonRegistrationService;
 import reactor.core.publisher.Mono;
 
-@RunWith(SpringRunner.class)
 @WebFluxTest
 public class PersonControllerTest {
   @MockBean

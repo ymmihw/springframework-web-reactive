@@ -3,25 +3,19 @@ package com.ymmihw.spring.webflux;
 import static org.mockito.BDDMockito.given;
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.MethodSorters;
+import org.junit.jupiter.api.MethodOrderer.MethodName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import com.ymmihw.spring.webflux.Employee;
-import com.ymmihw.spring.webflux.EmployeeRepository;
-import com.ymmihw.spring.webflux.EmployeeSpringApplication;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
     classes = EmployeeSpringApplication.class)
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@TestMethodOrder(MethodName.class)
 public class EmployeeControllerIntegrationTest {
 
   @Autowired

@@ -5,9 +5,6 @@ import org.springframework.boot.web.embedded.netty.NettyServerCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
-import io.netty.channel.EventLoopGroup;
-import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.nio.NioServerSocketChannel;
 import reactor.netty.http.server.HttpServer;
 
 @Configuration
@@ -25,11 +22,8 @@ public class CustomNettyWebServerFactory {
 
     @Override
     public HttpServer apply(HttpServer httpServer) {
-      EventLoopGroup parentGroup = new NioEventLoopGroup();
-      EventLoopGroup childGroup = new NioEventLoopGroup();
-      return httpServer
-          .tcpConfiguration(tcpServer -> tcpServer.bootstrap(serverBootstrap -> serverBootstrap
-              .group(parentGroup, childGroup).channel(NioServerSocketChannel.class)));
+      // custom http server here
+      return httpServer;
     }
   }
 }
