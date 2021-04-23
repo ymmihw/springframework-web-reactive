@@ -1,7 +1,6 @@
 package com.ymmihw.springframework;
 
 import org.springframework.boot.web.embedded.netty.NettyReactiveWebServerFactory;
-import org.springframework.boot.web.embedded.netty.SslServerCustomizer;
 import org.springframework.boot.web.server.Http2;
 import org.springframework.boot.web.server.Ssl;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
@@ -21,11 +20,9 @@ public class NettyWebServerFactorySslCustomizer
     ssl.setKeyStorePassword("123456");
     Http2 http2 = new Http2();
     http2.setEnabled(false);
-    
 
-    
-    
-    serverFactory.addServerCustomizers(new SslServerCustomizer(ssl, http2, null));
+    serverFactory.setHttp2(http2);
+    serverFactory.setSsl(ssl);
     serverFactory.setPort(8443);
   }
 }
