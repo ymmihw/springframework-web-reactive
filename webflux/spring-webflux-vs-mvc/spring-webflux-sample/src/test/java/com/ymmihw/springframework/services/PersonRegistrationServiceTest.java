@@ -10,25 +10,22 @@ import static com.github.tomakehurst.wiremock.client.WireMock.urlMatching;
 import static com.github.tomakehurst.wiremock.client.WireMock.verify;
 import static java.util.Objects.isNull;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-import com.github.tomakehurst.wiremock.junit.WireMockRule;
+import com.ymmihw.springframework.WireMockExtension;
 import com.ymmihw.springframework.models.Person;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class PersonRegistrationServiceTest {
   @Autowired
   private PersonRegistrationService personRegistrationService;
 
-  @Rule
-  public WireMockRule wireMockRule = new WireMockRule(8090);
+  @RegisterExtension
+  WireMockExtension mockServer1 = new WireMockExtension(8090);
 
   @Test
   public void should_call_registrationService() {

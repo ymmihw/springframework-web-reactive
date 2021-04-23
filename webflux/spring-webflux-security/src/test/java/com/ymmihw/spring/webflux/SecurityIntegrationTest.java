@@ -1,18 +1,16 @@
 package com.ymmihw.spring.webflux;
 
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.security.test.context.support.WithMockUser;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
-@RunWith(SpringRunner.class)
-@ContextConfiguration(classes = SpringSecurity5Application.class)
+
+@SpringBootTest(classes = SpringSecurity5Application.class)
 public class SecurityIntegrationTest {
 
   @Autowired
@@ -20,7 +18,7 @@ public class SecurityIntegrationTest {
 
   private WebTestClient rest;
 
-  @Before
+  @BeforeEach
   public void setup() {
     this.rest = WebTestClient.bindToApplicationContext(this.context).configureClient().build();
   }
@@ -31,7 +29,7 @@ public class SecurityIntegrationTest {
   }
 
   @Test
-  @Ignore
+  @Disabled
   @WithMockUser
   public void whenHasCredentials_thenSeesGreeting() {
     this.rest.get().uri("/").exchange().expectStatus().isOk().expectBody(String.class)

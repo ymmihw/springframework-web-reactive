@@ -1,8 +1,8 @@
 package com.ymmihw.spring.webflux;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.web.server.WebServer;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
@@ -11,13 +11,13 @@ public class ExploreSpring5URLPatternUsingRouterFunctionsIntegrationTest {
   private static WebTestClient client;
   private static WebServer server;
 
-  @BeforeClass
+  @BeforeAll
   public static void setup() throws Exception {
     server = new ExploreSpring5URLPatternUsingRouterFunctions().start();
     client = WebTestClient.bindToServer().baseUrl("http://localhost:" + server.getPort()).build();
   }
 
-  @AfterClass
+  @AfterAll
   public static void destroy() {
     server.stop();
   }
