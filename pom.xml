@@ -37,4 +37,20 @@
   <module>webflux</module>
   <module>websocket</module>
  </modules>
+ <build>
+  <plugins>
+   <!-- maven not run test -->
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>2.22.0</version>
+   </plugin>
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-failsafe-plugin</artifactId>
+    <version>2.22.0</version>
+   </plugin>
+   <!-- maven not run test -->
+  </plugins>
+ </build>
 </project>
