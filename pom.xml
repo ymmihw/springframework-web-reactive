@@ -36,7 +36,8 @@
  <modules>
   <module>webflux</module>
   <module>websocket</module>
- </modules> <build>
+ </modules>
+ <build>
   <plugins>
    <!-- maven not run test -->
    <plugin>
